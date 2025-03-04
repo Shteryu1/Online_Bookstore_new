@@ -5,7 +5,7 @@ include 'connection.php';
 <html lang="en">
 
 <head>
-	<title>BookSaw - Free Book Store HTML CSS Template</title>
+	<title>BookSaw</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,7 +83,7 @@ include 'connection.php';
 
 					<div class="col-md-2">
 						<div class="main-logo">
-							<a href="index.html"><img src="images/main-logo.png" alt="logo"></a>
+							<a href="index.php"><img src="images/main-logo.png" alt="logo"></a>
 						</div>
 
 					</div>
@@ -95,41 +95,32 @@ include 'connection.php';
 								<ul class="menu-list">
 									<li class="menu-item active"><a href="#home">Начало</a></li>
 									<li class="menu-item has-sub">
-										<a href="books.html" class="nav-link">Книги</a>
-
+										<a href="books.php" class="nav-link">Книги</a>
+											
 						 					<ul>	
-												<li class="active"><a href="index.html">Fantasy</a></li>
-												<li><a href="index.html">Horror</a></li>
-												<li><a href="index.html">Literary fiction</a></li>
-												<li><a href="index.html">Romance novel</a></li>
-												<li><a href="index.html">Science fiction</a></li>
-												<li><a href="index.html">Mystery</a></li>
-												<li><a href="index.html">Adventure fiction</a></li>
-												<li><a href="index.html">Thriller</a></li>
-												<li><a href="index.html">Contemporary literature</a></li>
-												<li><a href="index.html">Yound adult</a></li>
-												<li><a href="index.html">Dystopian Fiction</a></li>
-												<li><a href="index.html">Children's literature</a></li>
-												<li><a href="index.html">Comedy</a></li>
-												<li><a href="index.html">Graphic novel</a></li>
-												<li><a href="index.html">Historical</a></li>
-												<li><a href="index.html">Magical Realism</a></li>
-												<li><a href="index.html">Memoir</a></li>
-												<li><a href="index.html">Short story</a></li>
-												<li><a href="index.html">Biography</a></li>
-												<li><a href="index.html">Classics</a></li>
-												<li><a href="index.html">Fairy tale</a></li>
-												<li><a href="index.html">Mistery thriller</a></li>
-												<li><a href="index.html">Western</a></li>
-												<li><a href="index.html">Satire</a></li>
+												<li class="active"><a href="index.html"> Дом, градина и хоби</a></li>
+												<li><a href="index.html">Научна фантастика, фентъзи и хорър</a></li>
+												<li><a href="index.html">Криминални и трилъри</a></li>
+												<li><a href="index.html">Романтични </a></li>
+												<li><a href="index.html">Световна проза</a></li>
+												<li><a href="index.html">Българска литература</a></li>
+												<li><a href="index.html">Хумор</a></li>
+												<li><a href="index.html">Комикси</a></li>
+												<li><a href="index.html">Здраве и семейство</a></li>
+												<li><a href="index.html">Популярна психология</a></li>
+												<li><a href="index.html">История, културология и публицистика</a></li>
+												<li><a href="index.html">Изкуство, фотография, кино, музика</a></li>
+												<li><a href="index.html">Духовност, митология, езотерика</a></li>
+												<li><a href="index.html">Бизнес</a></li>
+												<li><a href="index.html">Туризъм и спорт</a></li>
 											</ul>
 										
 
 									</li>
-									<li class="menu-item"><a href="music.html">Музика</a></li>
-            						<li class="menu-item"><a href="movies.html">Филми</a></li>
-           						 	<li class="menu-item"><a href="games and toys.html">Игри и играчки</a></li>
-            						<li class="menu-item"><a href="school materials.html">Училищни материали</a></li>
+									<li class="menu-item"><a href="music.php">Музика</a></li>
+            						<li class="menu-item"><a href="movies.php">Филми</a></li>
+           						 	<li class="menu-item"><a href="games and toys.php">Игри и играчки</a></li>
+            						<li class="menu-item"><a href="school materials.php">Училищни материали</a></li>
 								</ul>
 
 								<div class="hamburger">
@@ -216,7 +207,7 @@ include 'connection.php';
 						<div class="title">
 							<span>Some quality items</span>
 						</div>
-						<h2 class="section-title">Featured Books</h2>
+						<h2 class="section-title">Оферти</h2>
 					</div>
 
 					<div class="product-list" data-aos="fade-up">
@@ -354,37 +345,9 @@ include 'connection.php';
 						<div class="title">
 							<span>Some quality items</span>
 						</div>
-						<h2 class="section-title">Popular Books</h2>
+						<h2 class="section-title">Популярни книги</h2>
 					</div>
-<!--
-					<ul class="tabs">
-						<li data-tab-target="#all-genre" class="active tab">All Genre</li>
-						<li data-tab-target="#business" class="tab">Fantasy</li>
-						<li data-tab-target="#technology" class="tab">Horror</li>
-						<li data-tab-target="#romantic" class="tab">Literary fiction</li>
-						<li data-tab-target="#adventure" class="tab">Romance novel</li>
-						<li data-tab-target="#fictional" class="tab">Science fiction</li>
-						<li data-tab-target="#fictional" class="tab">Mystery</li>
-						<li data-tab-target="#fictional" class="tab">Adventure fiction</li>
-						<li data-tab-target="#fictional" class="tab">Thriller</li>
-						<li data-tab-target="#fictional" class="tab">Contemporary literature</li>
-						<li data-tab-target="#fictional" class="tab">Yound adult</li>
-						<li data-tab-target="#fictional" class="tab">Dystopian Fiction</li>
-						<li data-tab-target="#fictional" class="tab">Children's literature</li>
-						<li data-tab-target="#fictional" class="tab">Comedy</li>
-						<li data-tab-target="#fictional" class="tab">Graphic novel</li>
-						<li data-tab-target="#fictional" class="tab">Historical</li>
-						<li data-tab-target="#fictional" class="tab">Magical Realism</li>
-						<li data-tab-target="#fictional" class="tab">Memoir</li>
-						<li data-tab-target="#fictional" class="tab">Short story</li>
-						<li data-tab-target="#fictional" class="tab">Biography</li>
-						<li data-tab-target="#fictional" class="tab">Classics</li>
-						<li data-tab-target="#fictional" class="tab">Fairy tale</li>
-						<li data-tab-target="#fictional" class="tab">Mistery thriller</li>
-						<li data-tab-target="#fictional" class="tab">Western</li>
-						<li data-tab-target="#fictional" class="tab">Satire</li>
-					</ul>
--->
+
 					<div class="tab-content">
 						<div id="all-genre" data-tab-content class="active">
 							<div class="row">
@@ -795,136 +758,10 @@ include 'connection.php';
 		</div>
 	</section>
 
-	<section id="special-offer" class="bookshelf pb-5 mb-5">
+	
 
-		<div class="section-header align-center">
-			<div class="title">
-				<span>Grab your opportunity</span>
-			</div>
-			<h2 class="section-title">Books with offer</h2>
-		</div>
-
-		<div class="container">
-			<div class="row">
-				<div class="inner-content">
-					<div class="product-list" data-aos="fade-up">
-						<div class="grid product-grid">
-							<div class="product-item">
-								<figure class="product-style">
-									<img src="images/product-item5.jpg" alt="Books" class="product-item">
-									<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
-										Cart</button>
-								</figure>
-								<figcaption>
-									<h3>Simple way of piece life</h3>
-									<span>Armor Ramsey</span>
-									<div class="item-price">
-										<span class="prev-price">$ 50.00</span>$ 40.00
-									</div>
-								</div>
-							</figcaption>
-
-							<div class="product-item">
-								<figure class="product-style">
-									<img src="images/product-item6.jpg" alt="Books" class="product-item">
-									<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
-										Cart</button>
-								</figure>
-								<figcaption>
-									<h3>Great travel at desert</h3>
-									<span>Sanchit Howdy</span>
-									<div class="item-price">
-										<span class="prev-price">$ 30.00</span>$ 38.00
-									</div>
-								</div>
-							</figcaption>
-
-							<div class="product-item">
-								<figure class="product-style">
-									<img src="images/product-item7.jpg" alt="Books" class="product-item">
-									<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
-										Cart</button>
-								</figure>
-								<figcaption>
-									<h3>The lady beauty Scarlett</h3>
-									<span>Arthur Doyle</span>
-									<div class="item-price">
-										<span class="prev-price">$ 35.00</span>$ 45.00
-									</div>
-								</div>
-							</figcaption>
-
-							<div class="product-item">
-								<figure class="product-style">
-									<img src="images/product-item8.jpg" alt="Books" class="product-item">
-									<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
-										Cart</button>
-								</figure>
-								<figcaption>
-									<h3>Once upon a time</h3>
-									<span>Klien Marry</span>
-									<div class="item-price">
-										<span class="prev-price">$ 25.00</span>$ 35.00
-									</div>
-								</div>
-							</figcaption>
-
-							<div class="product-item">
-								<figure class="product-style">
-									<img src="images/product-item2.jpg" alt="Books" class="product-item">
-									<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
-										Cart</button>
-								</figure>
-								<figcaption>
-									<h3>Simple way of piece life</h3>
-									<span>Armor Ramsey</span>
-									<div class="item-price">$ 40.00</div>
-								</figcaption>
-							</div>
-						</div><!--grid-->
-					</div>
-				</div><!--inner-content-->
-			</div>
-		</div>
-	</section>
-
-	<section id="subscribe">
-		<div class="container">
-			<div class="row justify-content-center">
-
-				<div class="col-md-8">
-					<div class="row">
-
-						<div class="col-md-6">
-
-							<div class="title-element">
-								<h2 class="section-title divider">Subscribe to our newsletter</h2>
-							</div>
-
-						</div>
-						<div class="col-md-6">
-
-							<div class="subscribe-content" data-aos="fade-up">
-								<p>Sed eu feugiat amet, libero ipsum enim pharetra hac dolor sit amet, consectetur. Elit
-									adipiscing enim pharetra hac.</p>
-								<form id="form">
-									<input type="text" name="email" placeholder="Enter your email addresss here">
-									<button class="btn-subscribe">
-										<span>send</span>
-										<i class="icon icon-send"></i>
-									</button>
-								</form>
-							</div>
-
-						</div>
-
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</section>
-
+	
+	<!--
 	<section id="latest-blog" class="py-5 my-5">
 		<div class="container">
 			<div class="row">
@@ -968,7 +805,7 @@ include 'connection.php';
 												</li>
 											</ul>
 										</div>
-									</div><!--links-element-->
+									</div>	
 
 								</div>
 							</article>
@@ -1001,7 +838,7 @@ include 'connection.php';
 												</li>
 											</ul>
 										</div>
-									</div><!--links-element-->
+									</div>
 
 								</div>
 							</article>
@@ -1034,7 +871,7 @@ include 'connection.php';
 												</li>
 											</ul>
 										</div>
-									</div><!--links-element-->
+									</div>
 
 								</div>
 							</article>
@@ -1055,38 +892,8 @@ include 'connection.php';
 			</div>
 		</div>
 	</section>
-
-	<section id="download-app" class="leaf-pattern-overlay">
-		<div class="corner-pattern-overlay"></div>
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-8">
-					<div class="row">
-
-						<div class="col-md-5">
-							<figure>
-								<img src="images/device.png" alt="phone" class="single-image">
-							</figure>
-						</div>
-
-						<div class="col-md-7">
-							<div class="app-info">
-								<h2 class="section-title divider">Download our app now !</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sed ptibus
-									liberolectus nonet psryroin. Amet sed lorem posuere sit iaculis amet, ac urna.
-									Adipiscing fames semper erat ac in suspendisse iaculis.</p>
-								<div class="google-app">
-									<img src="images/google-play.jpg" alt="google play">
-									<img src="images/app-store.jpg" alt="app store">
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+		-->
+	
 
 	<footer id="footer">
 		<div class="container">
@@ -1159,17 +966,15 @@ include 'connection.php';
 						<h5>My account</h5>
 						<ul class="menu-list">
 							<li class="menu-item">
+								<a href="#">Log in</a>
+							</li>
+							<li class="menu-item">
 								<a href="#">Sign In</a>
 							</li>
 							<li class="menu-item">
 								<a href="#">View Cart</a>
 							</li>
-							<li class="menu-item">
-								<a href="#">My Wishtlist</a>
-							</li>
-							<li class="menu-item">
-								<a href="#">Track My Order</a>
-							</li>
+							
 						</ul>
 					</div>
 
@@ -1211,8 +1016,8 @@ include 'connection.php';
 						<div class="row">
 
 							<div class="col-md-6">
-								<p>© 2022 All rights reserved. Free HTML Template by <a
-										href="https://www.templatesjungle.com/" target="_blank">TemplatesJungle</a></p>
+								<p>© 2022 All rights reserved.</p>
+										
 							</div>
 
 							<div class="col-md-6">

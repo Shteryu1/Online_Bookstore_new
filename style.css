@@ -1,18 +1,4 @@
-/*
-Theme Name: Booksaw BookStore Template
-Theme URI: https://templatesjungle.com/
-Author: TemplatesJungle
-Author URI: https://templatesjungle.com/
-Description: Booksaw is specially designed product packaged for Book Store by TemplateJungle.
-Version: 1.1
-*/
 
-/*--------------------------------------------------------------
-/* GENERAL STYLES
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-/** 1. VARIABLES
---------------------------------------------------------------*/
 :root {
   /* widths for rows and containers
      */
@@ -2440,4 +2426,32 @@ footer#footer {
   .products-grid .product-style {
     width: 100%;
   }
+}
+
+/* Стилизиране на подменюто */
+.menu-item.has-sub ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колони */
+  gap: 2px; /* Разстояние между колоните */
+  list-style: none;
+  padding: 2px;
+  background: rgb(221, 221, 221);
+  border: 1px solid #ccc;
+  position: absolute;
+  left: 0;
+  width: 500px; /* Задава ширината на падащото меню */
+  visibility: hidden; /* Скрива менюто по подразбиране */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Показване на жанровете при ховър */
+.menu-item.has-sub:hover ul {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Подменюто с жанровете */
+.menu-item.has-sub ul li {
+  padding: 1px;
 }

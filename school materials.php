@@ -80,7 +80,7 @@ include 'connection.php';
 
 					<div class="col-md-2">
 						<div class="main-logo">
-							<a href="index.html"><img src="images/main-logo.png" alt="logo"></a>
+							<a href="index.php"><img src="images/main-logo.png" alt="logo"></a>
 						</div>
 
 					</div>
@@ -90,43 +90,34 @@ include 'connection.php';
 						<nav id="navbar">
 							<div class="main-menu stellarnav">
 								<ul class="menu-list">
-									<li class="menu-item active"><a href="index.html">Начало</a></li>
+									<li class="menu-item active"><a href="index.php">Начало</a></li>
 									<li class="menu-item has-sub">
-										<a href="books.html" class="nav-link">Книги</a>
+										<a href="books.php" class="nav-link">Книги</a>
 
 						 					<ul>	
-												<li class="active"><a href="index.html">Fantasy</a></li>
-												<li><a href="index.html">Horror</a></li>
-												<li><a href="index.html">Literary fiction</a></li>
-												<li><a href="index.html">Romance novel</a></li>
-												<li><a href="index.html">Science fiction</a></li>
-												<li><a href="index.html">Mystery</a></li>
-												<li><a href="index.html">Adventure fiction</a></li>
-												<li><a href="index.html">Thriller</a></li>
-												<li><a href="index.html">Contemporary literature</a></li>
-												<li><a href="index.html">Yound adult</a></li>
-												<li><a href="index.html">Dystopian Fiction</a></li>
-												<li><a href="index.html">Children's literature</a></li>
-												<li><a href="index.html">Comedy</a></li>
-												<li><a href="index.html">Graphic novel</a></li>
-												<li><a href="index.html">Historical</a></li>
-												<li><a href="index.html">Magical Realism</a></li>
-												<li><a href="index.html">Memoir</a></li>
-												<li><a href="index.html">Short story</a></li>
-												<li><a href="index.html">Biography</a></li>
-												<li><a href="index.html">Classics</a></li>
-												<li><a href="index.html">Fairy tale</a></li>
-												<li><a href="index.html">Mistery thriller</a></li>
-												<li><a href="index.html">Western</a></li>
-												<li><a href="index.html">Satire</a></li>
+											 <li class="active"><a href="index.html"> Дом, градина и хоби</a></li>
+												<li><a href="index.html">Научна фантастика, фентъзи и хорър</a></li>
+												<li><a href="index.html">Криминални и трилъри</a></li>
+												<li><a href="index.html">Романтични </a></li>
+												<li><a href="index.html">Световна проза</a></li>
+												<li><a href="index.html">Българска литература</a></li>
+												<li><a href="index.html">Хумор</a></li>
+												<li><a href="index.html">Комикси</a></li>
+												<li><a href="index.html">Здраве и семейство</a></li>
+												<li><a href="index.html">Популярна психология</a></li>
+												<li><a href="index.html">История, културология и публицистика</a></li>
+												<li><a href="index.html">Изкуство, фотография, кино, музика</a></li>
+												<li><a href="index.html">Духовност, митология, езотерика</a></li>
+												<li><a href="index.html">Бизнес</a></li>
+												<li><a href="index.html">Туризъм и спорт</a></li>
 											</ul>
 										
 
 									</li>
-									<li class="menu-item"><a href="music.html">Музика</a></li>
-            						<li class="menu-item"><a href="movies.html">Филми</a></li>
-           						 	<li class="menu-item"><a href="games and toys.html">Игри и играчки</a></li>
-            						<li class="menu-item"><a href="school materials.html">Училищни материали</a></li>
+									<li class="menu-item"><a href="music.php">Музика</a></li>
+            						<li class="menu-item"><a href="movies.php">Филми</a></li>
+           						 	<li class="menu-item"><a href="games and toys.php">Игри и играчки</a></li>
+            						<li class="menu-item"><a href="school materials.php">Училищни материали</a></li>
 								</ul>
 
 								<div class="hamburger">
