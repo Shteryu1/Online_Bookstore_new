@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap&subset=cyrillic');
 
 :root {
   /* widths for rows and containers
@@ -1584,9 +1585,7 @@ button {
   margin-bottom: 75px;
 }
 
-.section-title.divider {
-  width: 100%;
-}
+
 
 .section-title.divider:after {
   content: "";
@@ -2454,4 +2453,14 @@ footer#footer {
 /* Подменюто с жанровете */
 .menu-item.has-sub ul li {
   padding: 1px;
+}
+
+.section-title.divider_quite {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  padding-bottom: 5px;
 }
