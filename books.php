@@ -16,7 +16,7 @@ include 'connection.php'; // Връзка с базата, увери се, че
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="icomoon/icomoon.css">
 	<link rel="stylesheet" type="text/css" href="css/vendor.css">
@@ -141,7 +141,7 @@ include 'connection.php'; // Връзка с базата, увери се, че
 	<?php
 		// SQL заявка с JOIN за извличане на последните 10 книги със свързани автори и жанрове
 		$sql = "SELECT books.title, authors.name AS author_name, genres.name AS genre_name, 
-					books.price, books.image, books.stock 
+					books.price, books.image, books.stock, books.rating
 				FROM books 
 				JOIN authors ON books.author_id = authors.id 
 				JOIN genres ON books.genre_id = genres.id 
@@ -172,6 +172,22 @@ include 'connection.php'; // Връзка с базата, увери се, че
 									echo '<span class="in-stock">В наличност (' . htmlspecialchars($row['stock']) . ' бр.)</span>';
 								} else {
 									echo '<span class="out-of-stock">Изчерпано</span>';
+								}
+							?>
+						</p>
+						<p class="book-rating">
+							<?php
+								$fullStars = floor($row['rating']);
+								$halfStar = ($row['rating'] - $fullStars) >= 0.5 ? 1 : 0;
+								$emptyStars = 5 - ($fullStars + $halfStar);
+								for ($i = 0; $i < $fullStars; $i++) {
+									echo '<i class="fa-solid fa-star text-warning"></i>';
+								}
+								if ($halfStar) {
+									echo '<i class="fa-solid fa-star-half-alt text-warning"></i>';
+								}
+								for ($i = 0; $i < $emptyStars; $i++) {
+									echo '<i class="fa-regular fa-star text-warning"></i>';
 								}
 							?>
 						</p>
