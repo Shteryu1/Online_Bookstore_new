@@ -2,7 +2,7 @@
 include 'connection.php';
 ?>
 <head>
-	<title>BookSaw - Free Book Store HTML CSS Template</title>
+	<title>BookSaw</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@ include 'connection.php';
 
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#header" tabindex="0">
+<body>
 
 	<div id="header-wrap">
 
@@ -134,3 +134,6 @@ include 'connection.php';
 				</div>
 			</div>
 		</header>
+		
+	</div>
+</body>

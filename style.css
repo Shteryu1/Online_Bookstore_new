@@ -2464,3 +2464,117 @@ footer#footer {
   text-align: center;
   padding-bottom: 5px;
 }
+
+
+
+
+
+
+
+
+/* Основни стилове за страницата */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Контейнер за всички книги */
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Карта на всяка книга */
+.book-card {
+  width: 250px;
+  border: 2px solid black;
+  padding: 15px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Контейнер за изображението на книгата */
+.book-image img {
+  width: 100%;
+  height: auto;
+  border: 2px solid black;
+  margin-bottom: 10px;
+}
+
+/* Заглавие */
+.book-title {
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid black;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+/* Автор */
+.book-author {
+  font-size: 14px;
+  border: 2px solid black;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+/* Жанр */
+.book-genre {
+  font-size: 14px;
+  border: 2px solid black;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+/* Цена */
+.book-price {
+  font-size: 14px;
+  font-weight: bold;
+  border: 2px solid black;
+  width: 50%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+/* Наличност */
+.book-stock {
+  margin-bottom: 10px;
+}
+
+/* Статус на наличност */
+.in-stock {
+  color: green;
+  font-weight: bold;
+}
+
+.out-of-stock {
+  color: red;
+  font-weight: bold;
+}
+
+/* Бутон за добавяне в количката */
+.add-to-cart {
+  background-color: #007bff;
+  color: white;
+  border: 2px solid black;
+  padding: 8px 12px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.add-to-cart:hover {
+  background-color: #0056b3;
+}

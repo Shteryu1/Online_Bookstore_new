@@ -1,8 +1,10 @@
 <?php
-include 'connection.php';
+include 'connection.php'; // Връзка с базата, увери се, че в connection.php се дефинира $conn
 ?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>BookSaw - Free Book Store HTML CSS Template</title>
+	<title>BookSaw</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +24,7 @@ include 'connection.php';
 
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#header" tabindex="0">
+<body>
 
 	<div id="header-wrap">
 
@@ -134,3 +136,63 @@ include 'connection.php';
 				</div>
 			</div>
 		</header>
+	</div>
+
+	<?php
+		// SQL заявка с JOIN за извличане на последните 10 книги със свързани автори и жанрове
+		$sql = "SELECT books.title, authors.name AS author_name, genres.name AS genre_name, 
+					books.price, books.image, books.stock 
+				FROM books 
+				JOIN authors ON books.author_id = authors.id 
+				JOIN genres ON books.genre_id = genres.id 
+				ORDER BY books.id DESC 
+				LIMIT 10";
+
+		$result = $conn->query($sql);
+	?>
+
+	<div class="books-container">
+		<?php
+			// Проверка дали има резултати
+			if ($result->num_rows > 0) {
+				while ($row = $result->fetch_assoc()) {
+		?>
+				<div class="book-card">
+					<div class="book-image">
+						<img src="images/<?php echo htmlspecialchars($row['image']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?>">
+					</div>
+					<div class="book-info">
+						<p class="book-title"><?php echo htmlspecialchars($row['title']); ?></p>
+						<p class="book-author"><?php echo htmlspecialchars($row['author_name']); ?></p>
+						<p class="book-genre"><?php echo htmlspecialchars($row['genre_name']); ?></p>
+						<p class="book-price"><?php echo htmlspecialchars($row['price']); ?> лв.</p>
+						<p class="book-stock">
+							<?php 
+								if ($row['stock'] > 0) {
+									echo '<span class="in-stock">В наличност (' . htmlspecialchars($row['stock']) . ' бр.)</span>';
+								} else {
+									echo '<span class="out-of-stock">Изчерпано</span>';
+								}
+							?>
+						</p>
+						<button class="add-to-cart">Добавяне в количката</button>
+					</div>
+				</div>
+				<?php
+						}
+					} else {
+						echo "<p>Няма налични книги.</p>";
+					}
+				?>
+	</div>
+
+
+
+</body>
+</html>
+
+<?php
+// Затваряме връзката с базата
+$conn->close();
+?>
+

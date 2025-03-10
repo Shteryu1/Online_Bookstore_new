@@ -25,7 +25,7 @@ include 'connection.php';
 
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#header" tabindex="0">
+<body>
 
 	<div id="header-wrap">
 

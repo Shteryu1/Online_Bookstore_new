@@ -3,7 +3,7 @@
 $host = 'localhost'; // Адрес на сървъра
 $user = 'root'; // Потребителско име за MySQL
 $password = ''; // Парола за MySQL (остави празно, ако няма)
-$dbname = 'online_bookstore'; // Име на базата данни
+$dbname = 'online_bookstore_new'; // Име на базата данни
 
 // Свързване с MySQL
 $conn = new mysqli($host, $user, $password, $dbname);
