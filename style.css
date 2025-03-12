@@ -2487,13 +2487,13 @@ body {
   justify-content: center;
   gap: 20px;
   padding: 20px;
+  
 }
 
 /* Карта на всяка книга */
 .book-card {
-  width: 250px;
-  border: 2px solid black;
-  padding: 15px;
+  width: 250px; 
+  padding: 8px; /* По-малко padding */
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -2505,7 +2505,6 @@ body {
 .book-image img {
   width: 100%;
   height: auto;
-  border: 2px solid black;
   margin-bottom: 10px;
 }
 
@@ -2513,43 +2512,40 @@ body {
 .book-title {
   font-size: 16px;
   font-weight: bold;
-  border: 2px solid black;
   width: 100%;
-  padding: 5px;
+  padding: 1px;
   margin-bottom: 5px;
 }
 
 /* Автор */
 .book-author {
   font-size: 14px;
-  border: 2px solid black;
   width: 100%;
-  padding: 5px;
-  margin-bottom: 5px;
+  padding: 1px;
+  margin-bottom: 1px;
 }
 
 /* Жанр */
 .book-genre {
   font-size: 14px;
-  border: 2px solid black;
   width: 100%;
-  padding: 5px;
-  margin-bottom: 5px;
+  padding: 1px;
+  margin-bottom: 1px;
 }
 
 /* Цена */
 .book-price {
   font-size: 14px;
   font-weight: bold;
-  border: 2px solid black;
   width: 50%;
-  padding: 5px;
-  margin-bottom: 10px;
+  padding: 1px;
+  margin-bottom: 1px;
 }
 
-/* Наличност */
+/* Статус на наличност */
 .book-stock {
-  margin-bottom: 10px;
+  font-size: 14px;
+  margin-bottom: 4px; /* Намалено разстояние под наличността */
 }
 
 /* Статус на наличност */
@@ -2567,14 +2563,53 @@ body {
 .add-to-cart {
   background-color: #007bff;
   color: white;
-  border: 2px solid black;
   padding: 8px 12px;
   cursor: pointer;
   width: 100%;
   font-size: 14px;
   text-transform: uppercase;
+  border-radius: 20px; /* Заоблени ръбове */
+
 }
 
 .add-to-cart:hover {
   background-color: #0056b3;
 }
+
+
+.book-image {
+  width: 100%;
+  height: 300px; /* Фиксирана височина */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+/* Стилизиране на звездите за рейтинг */
+.book-rating {
+  margin-bottom: 1px; /* Намалено разстояние между рейтинга и бутона */
+  font-size: 14px;
+  color: #f39c12; /* Оранжев цвят за звездите */
+  display: flex;
+  justify-content: center;
+  gap: 2px; /* Малко разстояние между звездите */
+}
+
+
+
+.add-to-cart:hover {
+  background-color: #0056b3;
+}
+
+
+
+
