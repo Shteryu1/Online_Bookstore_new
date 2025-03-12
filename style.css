@@ -2482,13 +2482,16 @@ body {
 
 /* Контейнер за всички книги */
 .books-container {
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 3px;
   padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 книги на ред */
+  justify-content: center;
   
 }
+
 
 /* Карта на всяка книга */
 .book-card {
