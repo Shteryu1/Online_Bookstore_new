@@ -22,6 +22,7 @@ include 'connection.php'; // Връзка с базата, увери се, че
 	<link rel="stylesheet" type="text/css" href="css/vendor.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
+
 </head>
 
 <body>

@@ -2482,136 +2482,129 @@ body {
 
 /* Контейнер за всички книги */
 .books-container {
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3px;
-  padding: 20px;
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 книги на ред */
+  gap: 10px; /* Разстояние между картите */
   justify-content: center;
-  
+  align-items: start;
 }
-
 
 /* Карта на всяка книга */
 .book-card {
-  width: 250px; 
-  padding: 8px; /* По-малко padding */
-  background: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-/* Контейнер за изображението на книгата */
-.book-image img {
+  align-items: flex-start; /* Подравняване вляво */
+  text-align: left; /* Текстът също ще бъде подравнен вляво */
+  background-color: #F3F2EC;
+  padding: 12px;
   width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Заглавие */
-.book-title {
-  font-size: 16px;
-  font-weight: bold;
-  width: 100%;
-  padding: 1px;
-  margin-bottom: 5px;
-}
-
-/* Автор */
-.book-author {
-  font-size: 14px;
-  width: 100%;
-  padding: 1px;
-  margin-bottom: 1px;
-}
-
-/* Жанр */
-.book-genre {
-  font-size: 14px;
-  width: 100%;
-  padding: 1px;
-  margin-bottom: 1px;
-}
-
-/* Цена */
-.book-price {
-  font-size: 14px;
-  font-weight: bold;
-  width: 50%;
-  padding: 1px;
-  margin-bottom: 1px;
-}
-
-/* Статус на наличност */
-.book-stock {
-  font-size: 14px;
-  margin-bottom: 4px; /* Намалено разстояние под наличността */
-}
-
-/* Статус на наличност */
-.in-stock {
-  color: green;
-  font-weight: bold;
-}
-
-.out-of-stock {
-  color: red;
-  font-weight: bold;
-}
-
-/* Бутон за добавяне в количката */
-.add-to-cart {
-  background-color: #007bff;
-  color: white;
-  padding: 8px 12px;
-  cursor: pointer;
-  width: 100%;
-  font-size: 14px;
-  text-transform: uppercase;
-  border-radius: 20px; /* Заоблени ръбове */
-
-}
-
-.add-to-cart:hover {
-  background-color: #0056b3;
-}
-
-
+/* Контейнер за изображението */
 .book-image {
   width: 100%;
-  height: 300px; /* Фиксирана височина */
+  height: 280px; /* Фиксирана височина за всички изображения */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-
-
-
-
-
-
-
-
-/* Стилизиране на звездите за рейтинг */
-.book-rating {
-  margin-bottom: 1px; /* Намалено разстояние между рейтинга и бутона */
-  font-size: 14px;
-  color: #f39c12; /* Оранжев цвят за звездите */
-  display: flex;
-  justify-content: center;
-  gap: 2px; /* Малко разстояние между звездите */
+/* Изображение в картата на книгата */
+.book-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain; /* Запазва пропорциите */
 }
 
+/* Контейнер за текстовото съдържание */
+.book-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Запълва височината на картата */
+  justify-content: space-between;
+  width: 100%;
+}
 
+/* Заглавие на книгата */
+.book-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 0;
+  width: 100%;
+}
+
+/* Подравняване на всички текстови елементи вляво */
+.book-author,
+.book-genre,
+.book-price,
+.book-stock,
+.book-rating {
+  font-size: 14px;
+  width: 100%;
+  margin: 4px 0;
+}
+
+/* Различен цвят за заглавието на книгата */
+.book-title {
+  color: #333;
+}
+
+/* Цвят за автора */
+.book-author {
+  color: #555;
+  font-style: italic;
+}
+
+/* Жанр */
+.book-genre {
+  color: #777;
+}
+
+/* Цена */
+.book-price {
+  color: #d9534f; /* Червеникав тон за цената */
+  font-weight: bold;
+}
+
+/* Наличност */
+.book-stock {
+  color: #5cb85c; /* Зелен цвят за наличност */
+  font-weight: bold;
+}
+
+/* Рейтинг */
+.book-rating {
+  color: #f0ad4e; /* Оранжев цвят за рейтинг */
+}
+
+/* Бутонът винаги остава най-отдолу */
+.add-to-cart {
+  background-color: #007bff;
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+  width: 240px;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  margin-top: auto; /* Бутонът остава най-долу */
+  text-align: center;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
 
 .add-to-cart:hover {
   background-color: #0056b3;
+  transform: scale(1.05);
+
 }
+
+
+
+
 
 
 
