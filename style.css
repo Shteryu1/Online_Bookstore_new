@@ -2493,13 +2493,12 @@ body {
 .book-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Подравняване вляво */
-  text-align: left; /* Текстът също ще бъде подравнен вляво */
   background-color: #F3F2EC;
   padding: 12px;
   width: 100%;
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  height: auto;
 }
 
 /* Контейнер за изображението */
@@ -2516,16 +2515,16 @@ body {
 .book-image img {
   max-width: 100%;
   height: auto;
-  object-fit: contain; /* Запазва пропорциите */
+  object-fit: contain;
 }
 
 /* Контейнер за текстовото съдържание */
 .book-content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Запълва височината на картата */
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto 1fr; /* Разпределя пространството между елементите */
+  gap: 5px;
   width: 100%;
+  flex-grow: 1;
 }
 
 /* Заглавие на книгата */
@@ -2534,9 +2533,18 @@ body {
   font-weight: bold;
   margin: 5px 0;
   width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  min-height: 3em; /* Принудително задаване на минимална височина */
 }
 
-/* Подравняване на всички текстови елементи вляво */
+/* Принудително еднаква височина на заглавията в реда */
+.books-container .book-title {
+  min-height: max-content; /* Автоматично намира най-дългото заглавие */
+}
+
+/* Подравняване на всички текстови елементи */
 .book-author,
 .book-genre,
 .book-price,
@@ -2545,14 +2553,15 @@ body {
   font-size: 14px;
   width: 100%;
   margin: 4px 0;
+  text-align: left;
 }
 
-/* Различен цвят за заглавието на книгата */
+/* Цвят за заглавието на книгата */
 .book-title {
   color: #333;
 }
 
-/* Цвят за автора */
+/* Автора */
 .book-author {
   color: #555;
   font-style: italic;
@@ -2565,19 +2574,27 @@ body {
 
 /* Цена */
 .book-price {
-  color: #d9534f; /* Червеникав тон за цената */
+  color: #d9534f;
   font-weight: bold;
 }
 
 /* Наличност */
 .book-stock {
-  color: #5cb85c; /* Зелен цвят за наличност */
+  color: #5cb85c;
   font-weight: bold;
 }
 
 /* Рейтинг */
 .book-rating {
-  color: #f0ad4e; /* Оранжев цвят за рейтинг */
+  color: #f0ad4e;
+}
+
+/* Контейнер за бутоните */
+.book-footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto; /* Бутонът остава най-долу */
 }
 
 /* Бутонът винаги остава най-отдолу */
@@ -2590,7 +2607,6 @@ body {
   font-size: 14px;
   text-transform: uppercase;
   border-radius: 20px;
-  margin-top: auto; /* Бутонът остава най-долу */
   text-align: center;
   border: none;
   transition: 0.3s ease-in-out;
@@ -2599,8 +2615,9 @@ body {
 .add-to-cart:hover {
   background-color: #0056b3;
   transform: scale(1.05);
-
 }
+
+
 
 
 
