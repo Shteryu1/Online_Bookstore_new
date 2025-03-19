@@ -2504,7 +2504,7 @@ body {
 /* Контейнер за изображението */
 .book-image {
   width: 100%;
-  height: 280px; /* Фиксирана височина за всички изображения */
+  height: 440px; /* Фиксирана височина за всички изображения */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2513,10 +2513,11 @@ body {
 
 /* Изображение в картата на книгата */
 .book-image img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Поддържа пропорциите, без да изрязва */
 }
+
 
 /* Контейнер за текстовото съдържание */
 .book-content {
