@@ -2494,11 +2494,10 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #F3F2EC;
-  padding: 12px;
+  padding: 0;
   width: 100%;
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  height: auto;
 }
 
 /* Контейнер за изображението */
@@ -2511,61 +2510,52 @@ body {
   overflow: hidden;
 }
 
-/* Изображение в картата на книгата */
 .book-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Поддържа пропорциите, без да изрязва */
+  object-fit: contain;
 }
-
 
 /* Контейнер за текстовото съдържание */
 .book-content {
   display: grid;
-  grid-template-rows: auto auto auto auto auto 1fr; /* Разпределя пространството между елементите */
-  gap: 5px;
+  grid-auto-rows: min-content; /* Всеки ред заема само необходимото пространство */
+  gap: 0;
   width: 100%;
   flex-grow: 1;
 }
 
-/* Заглавие на книгата */
-.book-title {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 5px 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  min-height: 3em; /* Принудително задаване на минимална височина */
-}
-
-/* Принудително еднаква височина на заглавията в реда */
-.books-container .book-title {
-  min-height: max-content; /* Автоматично намира най-дългото заглавие */
-}
-
-/* Подравняване на всички текстови елементи */
+/* Общ стил за текстовите елементи (без цена и бутон) */
+.book-title,
 .book-author,
 .book-genre,
-.book-price,
 .book-stock,
 .book-rating {
   font-size: 14px;
-  width: 100%;
-  margin: 4px 0;
+  margin: 0.1em 0;
   text-align: left;
+  line-height: 1;
 }
 
-/* Цвят за заглавието на книгата */
+/* Заглавие */
 .book-title {
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
   color: #333;
 }
 
-/* Автора */
+/* Автор */
 .book-author {
   color: #555;
   font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
 }
 
 /* Жанр */
@@ -2573,10 +2563,15 @@ body {
   color: #777;
 }
 
-/* Цена */
+/* Цена – премахваме допълнителното пространство */
 .book-price {
+  font-size: 14px;
   color: #d9534f;
   font-weight: bold;
+  margin: 0 !important;       /* Override any other margin */
+  padding: 0 !important;      /* Remove inner padding */
+  line-height: 1 !important;   /* Tight line height */
+  text-align: left;
 }
 
 /* Наличност */
@@ -2594,16 +2589,44 @@ body {
 .book-footer {
   display: flex;
   justify-content: center;
+  align-items: center; /* Vertically centers the content */
   width: 100%;
-  margin-top: auto; /* Бутонът остава най-долу */
+  margin: 0;
+  padding: 0;
+  line-height: 1;
 }
 
-/* Бутонът винаги остава най-отдолу */
-.add-to-cart {
-  background-color: #007bff;
-  color: white;
-  padding: 8px;
+/* Контейнер за цена + иконка (ако се използва) */
+.price-cart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;  /* Remove any gap between elements */
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+/* Бутон с SVG иконка */
+.add-to-cart-icon {
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 0;
+}
+
+.add-to-cart-icon svg {
+  transition: transform 0.2s ease;
+}
+
+.add-to-cart-icon:hover svg {
+  transform: scale(1.1);
+}
+
+/* Бутон "Добави в количката" – премахваме допълнителното пространство */
+.add-to-cart {
+  background-color: #2054d6;
+  color: white;
   width: 240px;
   font-size: 14px;
   text-transform: uppercase;
@@ -2611,19 +2634,13 @@ body {
   text-align: center;
   border: none;
   transition: 0.3s ease-in-out;
+  line-height: 1 !important;  /* Tight line height */
+  padding: 0 !important;      /* Remove inner padding */
+  margin: 0 !important;       /* Remove vertical margin */
 }
 
 .add-to-cart:hover {
-  background-color: #0056b3;
+  background-color: #2054d6;
   transform: scale(1.05);
 }
-
-
-
-
-
-
-
-
-
 

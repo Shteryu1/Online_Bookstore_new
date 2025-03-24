@@ -140,68 +140,85 @@ include 'connection.php'; // Връзка с базата, увери се, че
 	</div>
 
 	<?php
-		// SQL заявка с JOIN за извличане на последните 10 книги със свързани автори и жанрове
-		$sql = "SELECT books.title, authors.name AS author_name, genres.name AS genre_name, 
-					books.price, books.image, books.stock, books.rating
-				FROM books 
-				JOIN authors ON books.author_id = authors.id 
-				JOIN genres ON books.genre_id = genres.id 
-				ORDER BY books.id DESC 
-				LIMIT 10";
+	// SQL заявка с JOIN за извличане на последните 10 книги със свързани автори и жанрове
+	$sql = "SELECT books.title, authors.name AS author_name, genres.name AS genre_name, 
+				books.price, books.image, books.stock, books.rating
+			FROM books 
+			JOIN authors ON books.author_id = authors.id 
+			JOIN genres ON books.genre_id = genres.id 
+			ORDER BY books.id DESC 
+			LIMIT 10";
 
-		$result = $conn->query($sql);
+	$result = $conn->query($sql);
+?>
+
+<div class="books-container">
+	<?php
+		if ($result->num_rows > 0) {
+			while ($row = $result->fetch_assoc()) {
 	?>
-
-	<div class="books-container">
-		<?php
-			// Проверка дали има резултати
-			if ($result->num_rows > 0) {
-				while ($row = $result->fetch_assoc()) {
-		?>
-				<div class="book-card">
-					<div class="book-image">
-						<img src="images/<?php echo htmlspecialchars($row['image']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?>">
-					</div>
-					<div class="book-info">
-						<p class="book-title"><?php echo htmlspecialchars($row['title']); ?></p>
-						<p class="book-author"><?php echo htmlspecialchars($row['author_name']); ?></p>
-						<p class="book-genre"><?php echo htmlspecialchars($row['genre_name']); ?></p>
-						<p class="book-price"><?php echo htmlspecialchars($row['price']); ?> лв.</p>
-						<p class="book-stock">
-							<?php 
-								if ($row['stock'] > 0) {
-									echo '<span class="in-stock">В наличност (' . htmlspecialchars($row['stock']) . ' бр.)</span>';
-								} else {
-									echo '<span class="out-of-stock">Изчерпано</span>';
-								}
-							?>
-						</p>
-						<p class="book-rating">
-							<?php
-								$fullStars = floor($row['rating']);
-								$halfStar = ($row['rating'] - $fullStars) >= 0.5 ? 1 : 0;
-								$emptyStars = 5 - ($fullStars + $halfStar);
-								for ($i = 0; $i < $fullStars; $i++) {
-									echo '<i class="fa-solid fa-star text-warning"></i>';
-								}
-								if ($halfStar) {
-									echo '<i class="fa-solid fa-star-half-alt text-warning"></i>';
-								}
-								for ($i = 0; $i < $emptyStars; $i++) {
-									echo '<i class="fa-regular fa-star text-warning"></i>';
-								}
-							?>
-						</p>
-						<button class="add-to-cart">Добавяне в количката</button>
-					</div>
+			<div class="book-card">
+				<div class="book-image">
+					<img src="images/<?php echo htmlspecialchars($row['image']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?>">
 				</div>
-				<?php
-						}
-					} else {
-						echo "<p>Няма налични книги.</p>";
-					}
-				?>
-	</div>
+				<div class="book-info">
+					<p class="book-title"><?php echo htmlspecialchars($row['title']); ?></p>
+					<p class="book-author"><?php echo htmlspecialchars($row['author_name']); ?></p>
+					<p class="book-genre"><?php echo htmlspecialchars($row['genre_name']); ?></p>
+					
+					<div class="price-cart">
+						<span class="book-price"><?php echo htmlspecialchars($row['price']); ?> лв.</span>
+						<button class="add-to-cart-icon" title="Добави в количката">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="#2054d6" width="22" height="22" viewBox="0 0 24 24">
+								<path d="M7 18c-1.104 0-2 .896-2 2s.896 2 2 
+								2 2-.896 2-2-.896-2-2-2zm10 
+								0c-1.104 0-2 .896-2 2s.896 2 2 
+								2 2-.896 2-2-.896-2-2-2zM7.334 
+								14h9.938c.89 0 1.667-.583 
+								1.918-1.438l2.391-7.969A1 1 
+								0 0 0 20.625 3H6.21l-.545-2.18A1 
+								1 0 0 0 4.688 0H1a1 1 0 1 0 0 
+								2h2.334l2.933 11.742A2 2 0 0 0 
+								7.334 14z"/>
+							</svg>
+						</button>
+					</div>
+					
+					<p class="book-stock">
+						<?php 
+							if ($row['stock'] > 0) {
+								echo '<span class="in-stock">В наличност (' . htmlspecialchars($row['stock']) . ' бр.)</span>';
+							} else {
+								echo '<span class="out-of-stock">Изчерпано</span>';
+							}
+						?>
+					</p>
+					<p class="book-rating">
+						<?php
+							$fullStars = floor($row['rating']);
+							$halfStar = ($row['rating'] - $fullStars) >= 0.5 ? 1 : 0;
+							$emptyStars = 5 - ($fullStars + $halfStar);
+							for ($i = 0; $i < $fullStars; $i++) {
+								echo '<i class="fa-solid fa-star text-warning"></i>';
+							}
+							if ($halfStar) {
+								echo '<i class="fa-solid fa-star-half-alt text-warning"></i>';
+							}
+							for ($i = 0; $i < $emptyStars; $i++) {
+								echo '<i class="fa-regular fa-star text-warning"></i>';
+							}
+						?>
+					</p>
+				</div>
+			</div>
+	<?php
+			}
+		} else {
+			echo "<p>Няма налични книги.</p>";
+		}
+	?>
+</div>
+
 
 
 
