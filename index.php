@@ -904,9 +904,10 @@ include 'connection.php';
 					<div class="footer-item">
 						<div class="company-brand">
 							<img src="images/main-logo.png" alt="logo" class="footer-logo">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis sed ptibus liberolectus
-								nonet psryroin. Amet sed lorem posuere sit iaculis amet, ac urna. Adipiscing fames
-								semper erat ac in suspendisse iaculis.</p>
+							<p>Онлайн книжарницата предлага богата селекция от книги на български език в жанрове като фантастика,
+								 криминални трилъри, романтика, хумор, българска и световна проза, духовност, изкуство и още. Платформата е 
+								 създадена за удобство на читателя – с бърза и сигурна поръчка, лесна навигация и редовни намаления. Каталогът
+								  се обновява често, като включва както съвременни заглавия, така и вечни класики.</p>
 						</div>
 					</div>
 
