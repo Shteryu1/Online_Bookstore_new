@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap&subset=cyrillic');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap&subset=cyrillic');
 
 :root {
   /* widths for rows and containers
@@ -2297,7 +2297,8 @@ footer#footer {
 }
 
 #footer .footer-item p {
-  width: 80%;
+  width: 120%;
+  text-align: justify;
 }
 
 #footer .footer-menu {
