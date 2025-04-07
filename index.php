@@ -138,7 +138,9 @@ include 'connection.php';
 			</div>
 		</header>
 
-	</div><!--header-wrap-->
+		</div><!--header-wrap-->
+
+
 
 	<section id="billboard">
 
@@ -153,6 +155,7 @@ include 'connection.php';
 					<div class="main-slider pattern-overlay">
 						<div class="slider-item">
 							<div class="banner-content">
+								<!--
 								<h2 class="banner-title">Life of the Wild</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero
 									ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis
@@ -161,12 +164,54 @@ include 'connection.php';
 									<a href="#" class="btn btn-outline-accent btn-accent-arrow">Read More<i
 											class="icon icon-ns-arrow-right"></i></a>
 								</div>
-							</div><!--banner-content-->
+							</div>			banner-content
 							<img src="images/main-banner1.jpg" alt="banner" class="banner-image">
-						</div><!--slider-item-->
+						</div>slider-item
+									-->
 
 
-						
+						<?php
+								// Свързване с базата
+								$servername = "localhost";
+								$username = "root";
+								$password = "";
+								$dbname = "online_bookstore_new";
+
+								$conn = new mysqli($servername, $username, $password, $dbname);
+								if ($conn->connect_error) {
+									die("Грешка при свързване: " . $conn->connect_error);
+								}
+
+								// Вземаме 2 конкретни книги
+								$sql = "SELECT title, description, image FROM books WHERE id IN (20)";
+								$result = $conn->query($sql);
+
+								// Ако има резултати, ги визуализираме в банер стила
+								if ($result->num_rows > 0) {
+									while($row = $result->fetch_assoc()) {
+										?>
+										<div class="slider-item">
+											<div class="banner-content">
+												<h2 class="banner-title"><?php echo $row["title"]; ?></h2>
+												<p><?php echo $row["description"]; ?></p>
+												<div class="btn-wrap">
+													<a href="#" class="btn btn-outline-accent btn-accent-arrow">Read More
+														<i class="icon icon-ns-arrow-right"></i>
+													</a>
+												</div>
+											</div> <?--banner-content-->
+											<img src="images/<?php echo $row["image"]; ?>" alt="banner" class="banner-image">
+										</div> <!--slider-item-->
+										<?php
+									}
+								} else {
+									echo "Няма намерени книги.";
+								}
+
+								$conn->close();
+						?>
+
+						<?--
 						<div class="slider-item">
 							<div class="banner-content">
 								<h2 class="banner-title">Birds gonna be Happy</h2>
@@ -178,14 +223,55 @@ include 'connection.php';
 											class="icon icon-ns-arrow-right"></i></a>
 								</div>
 							</div>  
-							<!--banner-content-->
-						
-						
-
+							banner-content
 						
 							<img src="images/main-banner2.jpg" alt="banner" class="banner-image">
-						</div>  	<!--slider-item-->
+						</div>  	slider-item
+													-->
 
+													<?php
+								// Свързване с базата
+								$servername = "localhost";
+								$username = "root";
+								$password = "";
+								$dbname = "online_bookstore_new";
+
+								$conn = new mysqli($servername, $username, $password, $dbname);
+								if ($conn->connect_error) {
+									die("Грешка при свързване: " . $conn->connect_error);
+								}
+
+								// Вземаме 2 конкретни книги
+								$sql = "SELECT title, description, image FROM books WHERE id IN (21)";
+								$result = $conn->query($sql);
+
+								// Ако има резултати, ги визуализираме в банер стила
+								if ($result->num_rows > 0) {
+									while($row = $result->fetch_assoc()) {
+										?>
+										<div class="slider-item">
+											<div class="banner-content">
+												<h2 class="banner-title"><?php echo $row["title"]; ?></h2>
+												<p><?php echo $row["description"]; ?></p>
+												<div class="btn-wrap">
+													<a href="#" class="btn btn-outline-accent btn-accent-arrow">Read More
+														<i class="icon icon-ns-arrow-right"></i>
+													</a>
+												</div>
+											</div><!--banner-content-->
+											<img src="images/<?php echo $row["image"]; ?>" alt="banner" class="banner-image">
+										</div><!--slider-item-->
+										<?php
+									}
+								} else {
+									echo "Няма намерени книги.";
+								}
+
+								$conn->close();
+								?>
+
+
+							
 					</div> <!--slider-->
 
 					<button class="next slick-arrow">
