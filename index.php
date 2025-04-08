@@ -155,7 +155,7 @@ include 'connection.php';
 					<div class="main-slider pattern-overlay">
 						<div class="slider-item">
 							<div class="banner-content">
-								<!--
+								
 								<h2 class="banner-title">Life of the Wild</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero
 									ipsum enim pharetra hac. Urna commodo, lacus ut magna velit eleifend. Amet, quis
@@ -167,9 +167,9 @@ include 'connection.php';
 							</div>			banner-content
 							<img src="images/main-banner1.jpg" alt="banner" class="banner-image">
 						</div>slider-item
-									-->
+									
 
-
+						<?--
 						<?php
 								// Свързване с базата
 								$servername = "localhost";
@@ -209,9 +209,9 @@ include 'connection.php';
 								}
 
 								$conn->close();
-						?>
-
-						<?--
+								?>
+								-->
+						
 						<div class="slider-item">
 							<div class="banner-content">
 								<h2 class="banner-title">Birds gonna be Happy</h2>
@@ -227,8 +227,9 @@ include 'connection.php';
 						
 							<img src="images/main-banner2.jpg" alt="banner" class="banner-image">
 						</div>  	slider-item
-													-->
+													
 
+												/*
 													<?php
 								// Свързване с базата
 								$servername = "localhost";
@@ -269,7 +270,7 @@ include 'connection.php';
 
 								$conn->close();
 								?>
-
+									*/
 
 							
 					</div> <!--slider-->
