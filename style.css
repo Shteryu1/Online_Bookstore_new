@@ -1822,8 +1822,16 @@ img.post-image {
 #header .menu-list a.active {
   color: var(--accent-color);
 }
+.slider-item .banner-content p{
+  display: -webkit-box;
+  -webkit-line-clamp: 5;     /* Максимум 4 реда */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;   /* Автоматични 3 точки накрая */
+  max-width: 400px;          /* Точно определена ширина (по избор) */
+}
 
-/*----- Billboard
+/*----- Billboard   
 --------------------------------------------------------------*/
 #billboard .main-slider {
   padding: 80px 0;
