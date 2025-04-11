@@ -372,8 +372,14 @@ figure {
 img {
   display: inline-block;
   border: 0;
-  max-width: 100%;
-  height: auto;
+  max-width: 600px;
+  height: 70%;
+  vertical-align: middle;
+}
+
+.slider-item banner-content banner-title{
+  width: 600px;
+  height:800px;
   vertical-align: middle;
 }
 
@@ -1850,8 +1856,8 @@ img.post-image {
 }
 
 .banner-content h2.banner-title {
-  font-size: 4.5em;
-  font-weight: 500;
+  font-size: 2.5em;
+  font-weight: 200;
   color: #222;
 }
 
@@ -1908,7 +1914,7 @@ img.post-image {
 
 @media screen and (max-width: 999px) {
   .banner-content h2.banner-title {
-    font-size: 3.5em;
+    font-size: 2.5em;
   }
 
   #billboard .main-slider {
