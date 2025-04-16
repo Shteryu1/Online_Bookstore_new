@@ -1,4 +1,72 @@
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap&subset=cyrillic');
+/* За екрани с ширина до 768px (мобилни устройства) */
+@media screen and (max-width: 768px) {
+  .books-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 книги на ред за мобилни устройства */
+  }
+
+  .book-card {
+      width: 100%; /* Взима цялата ширина на контейнера */
+  }
+
+  .book-image {
+      height: 300px; /* Намаляваме височината на изображенията */
+  }
+
+  .book-title, .book-author, .book-genre, .book-stock, .book-rating {
+      font-size: 12px; /* Намаляване на размера на шрифта */
+  }
+
+  .book-footer {
+      flex-direction: column; /* Подреждаме бутоните в колона */
+      gap: 10px; /* Добавяме малко разстояние между бутоните */
+  }
+
+  /* Увеличаваме размерите на бутона за мобилни устройства */
+  .add-to-cart {
+      width: 100%; /* Бутонът да заема цялата ширина */
+      padding: 10px;
+  }
+}
+
+/* За екрани с ширина до 1024px (таблети) */
+@media screen and (max-width: 1024px) {
+  .books-container {
+      grid-template-columns: repeat(3, 1fr); /* 3 книги на ред за таблети */
+  }
+
+  .book-card {
+      width: 100%;
+  }
+
+  .book-title {
+      font-size: 14px;
+  }
+
+  .book-footer {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  .add-to-cart {
+      width: 100%;
+  }
+}
+
+/* За екрани с ширина над 1024px (десктоп) */
+@media screen and (min-width: 1025px) {
+  .books-container {
+      grid-template-columns: repeat(5, 1fr); /* 5 книги на ред за десктоп */
+  }
+
+  .book-image {
+      height: 440px; /* Стандартна височина на изображенията за десктоп */
+  }
+}
+
+ 
+
+
+ @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap&subset=cyrillic');
 
 :root {
   /* widths for rows and containers
@@ -764,7 +832,7 @@ td:last-child {
 /*------------------------------------------------
 /* 2.7 Spacing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-button,
+button:not(.add-to-cart-icon),
 .button {
   margin-bottom: 1rem;
 }
@@ -839,7 +907,7 @@ input[type="button"],
 input[type="submit"],
 input[type="reset"],
 input[type="file"],
-button {
+button:not(.add-to-cart-icon) {
   background-image: none;
   background: var(--accent-color);
   text-decoration: none !important;
@@ -1451,7 +1519,7 @@ This is main CSS file that contains custom style rules used in this template
 /* - Button
 ------------------------------------------------------------- */
 
-button {
+button:not(.add-to-cart-icon) {
   font-size: 1em;
   font-weight: 600;
   border: none;
@@ -2515,7 +2583,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #F3F2EC;
-  padding: 0;
+  padding: 10px;
   width: 100%;
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
@@ -2540,10 +2608,11 @@ body {
 /* Контейнер за текстовото съдържание */
 .book-content {
   display: grid;
-  grid-auto-rows: min-content; /* Всеки ред заема само необходимото пространство */
-  gap: 0;
+  grid-auto-rows: min-content;
+  gap: 8px; /* Add some consistent gap between elements */
   width: 100%;
   flex-grow: 1;
+  padding: 10px 0; /* Add some padding top and bottom */
 }
 
 /* Общ стил за текстовите елементи (без цена и бутон) */
@@ -2584,14 +2653,14 @@ body {
   color: #777;
 }
 
-/* Цена – премахваме допълнителното пространство */
+/* Цена */
 .book-price {
-  font-size: 14px;
+  font-size: 16px;
   color: #d9534f;
   font-weight: bold;
-  margin: 0 !important;       /* Override any other margin */
-  padding: 0 !important;      /* Remove inner padding */
-  line-height: 1 !important;   /* Tight line height */
+  margin: 8px 0 !important; /* Add consistent vertical spacing */
+  padding: 0 !important;
+  line-height: 1.2 !important;
   text-align: left;
 }
 
@@ -2609,20 +2678,21 @@ body {
 /* Контейнер за бутоните */
 .book-footer {
   display: flex;
-  justify-content: center;
-  align-items: center; /* Vertically centers the content */
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  margin: 0;
+  margin-top: 10px; /* Add space between content and footer */
   padding: 0;
   line-height: 1;
 }
 
-/* Контейнер за цена + иконка (ако се използва) */
+/* Контейнер за цена + иконка */
 .price-cart {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 0;  /* Remove any gap between elements */
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px; /* Add space between price and cart icon */
   margin: 0;
   padding: 0;
   line-height: 1;
@@ -2630,7 +2700,7 @@ body {
 
 /* Бутон с SVG иконка */
 .add-to-cart-icon {
-  background: none;
+  /* background: none; */
   border: none;
   cursor: pointer;
   padding: 0;
@@ -2655,9 +2725,9 @@ body {
   text-align: center;
   border: none;
   transition: 0.3s ease-in-out;
-  line-height: 1 !important;  /* Tight line height */
-  padding: 0 !important;      /* Remove inner padding */
-  margin: 0 !important;       /* Remove vertical margin */
+  line-height: 2.5 !important; /* Increase line height for better button height */
+  padding: 0 20px !important; /* Add horizontal padding */
+  margin: 8px 0 !important; /* Add vertical margin */
 }
 
 .add-to-cart:hover {
